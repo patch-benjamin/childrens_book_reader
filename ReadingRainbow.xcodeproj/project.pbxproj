@@ -14,6 +14,9 @@
 		3E006E9D2A6982D100A1C200 /* ReadingRainbowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006E9C2A6982D100A1C200 /* ReadingRainbowTests.swift */; };
 		3E006EA72A6982D100A1C200 /* ReadingRainbowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006EA62A6982D100A1C200 /* ReadingRainbowUITests.swift */; };
 		3E006EA92A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006EA82A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift */; };
+		716078702A8BC4F700E5E52E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7160786F2A8BC4F700E5E52E /* ComposableArchitecture */; };
+		716078722A8BC58E00E5E52E /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716078712A8BC58E00E5E52E /* Book.swift */; };
+		716078752A8BC5A700E5E52E /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716078742A8BC5A700E5E52E /* Page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,8 @@
 		3E006EA22A6982D100A1C200 /* ReadingRainbowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadingRainbowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E006EA62A6982D100A1C200 /* ReadingRainbowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingRainbowUITests.swift; sourceTree = "<group>"; };
 		3E006EA82A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingRainbowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		716078712A8BC58E00E5E52E /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		716078742A8BC5A700E5E52E /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716078702A8BC4F700E5E52E /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +102,7 @@
 			children = (
 				3E006E8B2A6982CF00A1C200 /* ReadingRainbowApp.swift */,
 				3E006E8D2A6982CF00A1C200 /* ContentView.swift */,
+				716078732A8BC59600E5E52E /* Models */,
 				3E006E8F2A6982D000A1C200 /* Assets.xcassets */,
 				3E006E912A6982D000A1C200 /* Preview Content */,
 			);
@@ -127,6 +134,15 @@
 			path = ReadingRainbowUITests;
 			sourceTree = "<group>";
 		};
+		716078732A8BC59600E5E52E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				716078712A8BC58E00E5E52E /* Book.swift */,
+				716078742A8BC5A700E5E52E /* Page.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +159,9 @@
 			dependencies = (
 			);
 			name = ReadingRainbow;
+			packageProductDependencies = (
+				7160786F2A8BC4F700E5E52E /* ComposableArchitecture */,
+			);
 			productName = ReadingRainbow;
 			productReference = 3E006E882A6982CF00A1C200 /* ReadingRainbow.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 3E006E7F2A6982CF00A1C200;
+			packageReferences = (
+				7160786E2A8BC4F700E5E52E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 3E006E892A6982CF00A1C200 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,6 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E006E8E2A6982CF00A1C200 /* ContentView.swift in Sources */,
+				716078722A8BC58E00E5E52E /* Book.swift in Sources */,
+				716078752A8BC5A700E5E52E /* Page.swift in Sources */,
 				3E006E8C2A6982CF00A1C200 /* ReadingRainbowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +601,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7160786E2A8BC4F700E5E52E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7160786F2A8BC4F700E5E52E /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7160786E2A8BC4F700E5E52E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E006E802A6982CF00A1C200 /* Project object */;
 }
