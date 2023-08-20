@@ -134,6 +134,7 @@ class RecordingsManager {
         }
         audioRecorder.stop()
         let recordingDefaultName = audioRecorder.url.lastPathComponent
+        let recordingTitle = Self.defaultFileName + "\(recordings.count)"
         let destinationURL = FileManager.renameFileInDocumentsDirectory(from: recordingDefaultName, to: Self.defaultFileName + "\(recordings.count)")!
         print("audio created at \(destinationURL)")
         self.audioRecorder = nil
@@ -147,7 +148,8 @@ class RecordingsManager {
         } catch {
             print("Failed to deactivate audioSession: \(error.localizedDescription)")
         }
-        addRecording(destinationURL, url: Recording(title: "Recording \(recordings.count + 1)", duration: audioRecorder.currentTime, dateCreated: Date()))
+        let newRecording = Recording(url: destinationURL, title: recordingTitle, duration: audioRecorder.currentTime, dateCreated: Date())
+        addRecording(newRecording, url: destinationURL.absoluteString)
     }
     
     func loadRecordings() {
@@ -172,7 +174,6 @@ class RecordingsManager {
     
     func addRecording(_ recording: Recording, url: String) {
         recordings[recording] = url
-        addRecording(recording, url: url)
         // TODO: do catch
         saveRecordings()
     }
@@ -222,7 +223,7 @@ class RecordingsManager {
             
             startTime = Date()
             timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
-                guard let  self = self, let startTime = self.startTime else { return }
+                guard let self = self, let startTime = self.startTime else { return }
                 self.elapsedTime = self.audioRecorder?.currentTime ?? 0
             }
         } catch {
