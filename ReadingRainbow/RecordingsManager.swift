@@ -9,22 +9,9 @@ import Foundation
 import Dependencies
 import AVFoundation
 
- enum RecordingKey: DependencyKey {
-    static let liveValue = RecordingKey.live
-}
-
- extension DependencyValues {
-    var recordingKey: RecordingKey {
-        get { self[RecordingKey.self] }
-        set { self[RecordingKey.self] = newValue}
-    }
-}
-
-
-class RecordingsManager {
+class RecordingsManager: ObservableObject {
     private var recordings: [Recording: String] = [:]
     static let defaultFileName = "AudioRecording"
-    static let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let storageURL = FileManager.documentDirectory.appendingPathComponent("AllRecordings")
     
     var audioRecorder: AVAudioRecorder?
@@ -101,6 +88,7 @@ class RecordingsManager {
         if isPaused {
             audioRecorder?.record()
             isRecording = true
+            isPaused = false
         } else {
             audioRecorder?.prepareToRecord()
             audioRecorder?.record()
@@ -110,7 +98,7 @@ class RecordingsManager {
         startTime = Date()
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-            self.elapsedTime = audioRecorder?.currentTime ?? 0
+            self.elapsedTime = self.audioRecorder?.currentTime ?? 0
         }
         
     }
@@ -118,6 +106,7 @@ class RecordingsManager {
         if isRecording {
             audioRecorder?.pause()
             isPaused = true
+            isRecording = false
         }
     }
     
@@ -232,5 +221,14 @@ class RecordingsManager {
     }
 }
     
+enum RecordingKey: DependencyKey {
+    static let liveValue = RecordingsManager()
+}
 
+ extension DependencyValues {
+    var recordingsManager: RecordingsManager {
+        get { self[RecordingKey.self] }
+        set { self[RecordingKey.self] = newValue}
+    }
+}
 
