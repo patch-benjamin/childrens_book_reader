@@ -26,11 +26,6 @@ class RecordingsManager: ObservableObject {
     @Published var elapsedTime: TimeInterval = 0
     @Published var isPaused: Bool = false
     
-    //    override init () {
-    //        super.init()
-    //        loadRecordings()
-    //    }
-    
     func requestMicrophoneAccess() {
         AVAudioSession.sharedInstance().requestRecordPermission {
             granted in
