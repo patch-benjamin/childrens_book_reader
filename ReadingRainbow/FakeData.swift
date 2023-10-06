@@ -17,27 +17,27 @@ extension Book {
         static let book3Image = UIImage(named: "book3Image")?.pngData() ?? Data()
         
         static let book1Content = [
-            Page(image: Data(), pageNumber: 1, content: ["Page 1 Text"]),
-            Page(image: Data(), pageNumber: 2, content: ["Page 2 Text"])
+            Page(image: Data(), pageNumber: 1, paragraphs: ["Page 1 Text"]),
+            Page(image: Data(), pageNumber: 2, paragraphs: ["Page 2 Text"])
         ]
         
         static let book2Content = [
-            Page(image: Data(), pageNumber: 1, content: ["Page 1 Text"]),
-            Page(image: Data(), pageNumber: 2, content: ["Page 2 Text"])
+            Page(image: Data(), pageNumber: 1, paragraphs: ["Page 1 Text"]),
+            Page(image: Data(), pageNumber: 2, paragraphs: ["Page 2 Text"])
         ]
         
         static let book3Content = [
-            Page(image: Data(), pageNumber: 1, content: ["Page 1 Text"]),
-            Page(image: Data(), pageNumber: 2, content: ["Page 2 Text"])
+            Page(image: Data(), pageNumber: 1, paragraphs: ["Page 1 Text"]),
+            Page(image: Data(), pageNumber: 2, paragraphs: ["Page 2 Text"])
         ]
         
-        static let book1 = Book(image: book1Image, title: "Harry Potter and the Sorcerer's Stone", pages: book1Content, uniqueWords: ["magic", "wizard", "spell"], paragraphs: ["Paragraph 1 Text", "Paragraph 2 Text"])
+        static let book1 = Book(image: book1Image, title: "The Lorax", pages: book1Content, uniqueWords: ["Truffula", "Lorax", "trees"], paragraphs: ["Paragraph 1 Text", "Paragraph 2 Text"])
         
         
-        static let book2 = Book(image: book2Image, title: "Would You Rather...?", pages: book2Content, uniqueWords: ["question", "choice", "fun"], paragraphs: ["Paragraph 1 Text", "Paragraph 2 Text"])
+        static let book2 = Book(image: book2Image, title: "The Cat in the Hat", pages: book2Content, uniqueWords: ["Thing", "cat", "mess"], paragraphs: ["Paragraph 1 Text", "Paragraph 2 Text"])
         
         
-        static let book3 = Book(image: book3Image, title: "The Hobbit", pages: book3Content, uniqueWords: ["hobbit", "adventure", "dragon"], paragraphs: ["Paragraph 1 Text", "Paragraph 2 Text"])
+        static let book3 = Book(image: book3Image, title: "Horton Hears a Who", pages: book3Content, uniqueWords: ["who", "elephant", "speck"], paragraphs: ["Paragraph 1 Text", "Paragraph 2 Text"])
     }
 }
 

@@ -10,6 +10,25 @@ import Foundation
 struct Page {
     var image: Data
     var pageNumber: Int // maybe not needed?
-    var uniqueWords: [String] // computed from paragraphs? grab all unique words from its pages and return those. a set would be better, remove punctuation and anything that's not alphabet or number, trim away characters that aren't alphanumeric at the beginning or end
     var paragraphs: [String]
+    
+    private var _uniqueWords: Set<String> {
+        var words = Set<String>()
+        
+        for paragraph in paragraphs {
+            let wordTokens = paragraph.split { !("a"..."z").contains($0) && !("A"..."Z").contains($0) && !("0"..."9").contains($0)}
+            
+            for token in wordTokens {
+                let cleanedWord = token.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                if !cleanedWord.isEmpty {
+                    words.insert(cleanedWord)
+                }
+            }
+        }
+        return words
+    } 
+ 
+    var uniqueWords: [String] {
+        return _uniqueWords.sorted()
+    }
 }

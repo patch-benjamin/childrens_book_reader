@@ -11,6 +11,15 @@ struct Book {
     var image: Data
     var title: String
     var pages: [Page]
-    var uniqueWords: [String] // might be computed from `pages.uniqueWords`
-    var paragraphs: [String] // might be computed from `pages.paragraphs`
+    var uniqueWords: [String] {
+        var words = Set<String>()
+        for page in pages {
+            words.formUnion(page.uniqueWords)
+        }
+        return Array(words).sorted()
+    }
+    
+    var paragraphs: [String] {
+        return pages.flatMap { $0.paragraphs }
+    }
 }
