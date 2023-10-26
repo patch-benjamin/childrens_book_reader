@@ -47,21 +47,23 @@ struct MyBooks: View {
     var body: some View {
         NavigationStackStore(self.store.scope(state: \.path, action: { .path($0) })) {
             WithViewStore(store, observe: { $0 }) { ViewStore in
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(1..<11) { imageName in
-                            VStack {
-                                Text("name")
-                                
-                                NavigationLink(state: BookDetailReducer.State(bookName: "Ocean\(imageName)")) {
-                                    Image("Ocean\(imageName)").resizable().frame(width: 150, height: 150)
-                                }
-                                    
-                            }
-                        }
-                        
-                    }
-                }
+                ScrollingView(data: (1..<11).map({ "\($0)"}) )
+//                ScrollView {
+//                    LazyVGrid(columns: columns, spacing: 20)
+//                    {
+//                        ForEach(1..<11) { imageName in
+//                            VStack {
+//                                Text("name")
+//
+//                                NavigationLink(state: BookDetailReducer.State(bookName: "Ocean\(imageName)")) {
+//                                    Image("Ocean\(imageName)").resizable().frame(width: 150, height: 150)
+//                                }
+//
+//                            }
+//                        }
+//
+//                    }
+//                }
                 .navigationTitle("My Book")
                 .toolbar {
                     ToolbarItem {
@@ -96,10 +98,7 @@ extension MyBooksReducer {
         
         enum Action: Equatable {
             
-        }
-        
-
-        
+        }  
     }
     
 }

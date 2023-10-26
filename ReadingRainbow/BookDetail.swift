@@ -14,11 +14,19 @@ struct BookDetailReducer: Reducer {
     }
     
     enum Action: Equatable {
-        
+        case nextImageButtonTapped
+        case previousImageButtonTapped
     }
     
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
-         
+        switch action {
+        case .nextImageButtonTapped:
+            print("Next image button tapped")
+            return .none
+        case .previousImageButtonTapped:
+            print("previous image button tapped")
+            return .none
+        }
     }
 }
 
@@ -36,18 +44,15 @@ struct BookDetail: View {
                     Image("Ocean1")
                     HStack(spacing: 325) {
                         Button {
-                            
+                            ViewStore.send(.previousImageButtonTapped)
                         } label: {
                             Text("<").font(.largeTitle)
                         }.hoverEffect(.highlight)
-                        
                         Button {
-                            
+                            ViewStore.send(.nextImageButtonTapped)
                         } label: {
                             Text(">").font(.largeTitle)
                         }.hoverEffect(.highlight)
-                        
-                        
                     }
                 }
             }
