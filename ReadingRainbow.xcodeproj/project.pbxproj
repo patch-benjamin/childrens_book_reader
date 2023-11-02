@@ -14,6 +14,7 @@
 		3E006E9D2A6982D100A1C200 /* ReadingRainbowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006E9C2A6982D100A1C200 /* ReadingRainbowTests.swift */; };
 		3E006EA72A6982D100A1C200 /* ReadingRainbowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006EA62A6982D100A1C200 /* ReadingRainbowUITests.swift */; };
 		3E006EA92A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006EA82A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift */; };
+		3E80F5E92AF14F2F00D123DA /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80F5E82AF14F2F00D123DA /* ParentView.swift */; };
 		3EA972EA2ABC8DB600DDDEA8 /* ScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA972E92ABC8DB600DDDEA8 /* ScrollingView.swift */; };
 		3EE398A82A97E954007D1F41 /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE398A72A97E954007D1F41 /* BookDetail.swift */; };
 		716078702A8BC4F700E5E52E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7160786F2A8BC4F700E5E52E /* ComposableArchitecture */; };
@@ -49,6 +50,8 @@
 		3E006EA22A6982D100A1C200 /* ReadingRainbowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadingRainbowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E006EA62A6982D100A1C200 /* ReadingRainbowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingRainbowUITests.swift; sourceTree = "<group>"; };
 		3E006EA82A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingRainbowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3E80F5E82AF14F2F00D123DA /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		3E87400C2AF0028100BE946D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3EA972E92ABC8DB600DDDEA8 /* ScrollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingView.swift; sourceTree = "<group>"; };
 		3EE398A72A97E954007D1F41 /* BookDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
 		716078712A8BC58E00E5E52E /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -104,9 +107,11 @@
 		3E006E8A2A6982CF00A1C200 /* ReadingRainbow */ = {
 			isa = PBXGroup;
 			children = (
+				3E87400C2AF0028100BE946D /* Info.plist */,
 				3E006E8B2A6982CF00A1C200 /* ReadingRainbowApp.swift */,
 				3E006E8D2A6982CF00A1C200 /* MyBooks.swift */,
 				3EE398A72A97E954007D1F41 /* BookDetail.swift */,
+				3E80F5E82AF14F2F00D123DA /* ParentView.swift */,
 				3EA972E92ABC8DB600DDDEA8 /* ScrollingView.swift */,
 				716078732A8BC59600E5E52E /* Models */,
 				3E006E8F2A6982D000A1C200 /* Assets.xcassets */,
@@ -289,6 +294,7 @@
 				3E006E8E2A6982CF00A1C200 /* MyBooks.swift in Sources */,
 				716078722A8BC58E00E5E52E /* Book.swift in Sources */,
 				716078752A8BC5A700E5E52E /* Page.swift in Sources */,
+				3E80F5E92AF14F2F00D123DA /* ParentView.swift in Sources */,
 				3E006E8C2A6982CF00A1C200 /* ReadingRainbowApp.swift in Sources */,
 				3EE398A82A97E954007D1F41 /* BookDetail.swift in Sources */,
 			);
@@ -451,6 +457,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ReadingRainbow/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReadingRainbow/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Would you like to use FaceID?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -479,6 +487,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ReadingRainbow/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReadingRainbow/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Would you like to use FaceID?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

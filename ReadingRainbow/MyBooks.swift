@@ -7,11 +7,13 @@
 
 import SwiftUI
 import ComposableArchitecture
+import LocalAuthentication
 
 struct MyBooksReducer: Reducer {
     
     struct State: Equatable {
         @PresentationState var myBookDetail: BookDetailReducer.State?
+        @PresentationState var parentView: ParentViewReducer.State?
         var path = StackState<BookDetailReducer.State>()
     }
     
@@ -40,38 +42,25 @@ struct MyBooksReducer: Reducer {
 
 
 struct MyBooks: View {
+    var context = LAContext()
+    
     let store: StoreOf<MyBooksReducer>
 
     let columns = [GridItem(.adaptive(minimum: 150))]
- 
+    
     var body: some View {
         NavigationStackStore(self.store.scope(state: \.path, action: { .path($0) })) {
             WithViewStore(store, observe: { $0 }) { ViewStore in
                 ScrollingView(data: (1..<11).map({ "\($0)"}) )
-//                ScrollView {
-//                    LazyVGrid(columns: columns, spacing: 20)
-//                    {
-//                        ForEach(1..<11) { imageName in
-//                            VStack {
-//                                Text("name")
-//
-//                                NavigationLink(state: BookDetailReducer.State(bookName: "Ocean\(imageName)")) {
-//                                    Image("Ocean\(imageName)").resizable().frame(width: 150, height: 150)
-//                                }
-//
-//                            }
-//                        }
-//
-//                    }
-//                }
                 .navigationTitle("My Book")
                 .toolbar {
                     ToolbarItem {
-                        Button {
-                            print("Parent mode activated")
-                        } label: {
-                            Text("Parent Mode")
-                        }
+                        NavigationLink("Parent Mode", destination: ParentView())
+//                        Button {
+//                            print("Parent mode activated")
+//                        } label: {
+//                            Text("Parent Mode")
+//                        }
                         
                     }
                 }
