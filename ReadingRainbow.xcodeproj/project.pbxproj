@@ -17,6 +17,7 @@
 		716078702A8BC4F700E5E52E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7160786F2A8BC4F700E5E52E /* ComposableArchitecture */; };
 		716078722A8BC58E00E5E52E /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716078712A8BC58E00E5E52E /* Book.swift */; };
 		716078752A8BC5A700E5E52E /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716078742A8BC5A700E5E52E /* Page.swift */; };
+		84A5F5882AA80C72005FA29F /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5F5872AA80C72005FA29F /* FakeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3E006EA82A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingRainbowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		716078712A8BC58E00E5E52E /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		716078742A8BC5A700E5E52E /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		84A5F5872AA80C72005FA29F /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				3E006E8B2A6982CF00A1C200 /* ReadingRainbowApp.swift */,
 				3E006E8D2A6982CF00A1C200 /* ContentView.swift */,
+				84A5F5872AA80C72005FA29F /* FakeData.swift */,
 				716078732A8BC59600E5E52E /* Models */,
 				3E006E8F2A6982D000A1C200 /* Assets.xcassets */,
 				3E006E912A6982D000A1C200 /* Preview Content */,
@@ -283,6 +286,7 @@
 				716078722A8BC58E00E5E52E /* Book.swift in Sources */,
 				716078752A8BC5A700E5E52E /* Page.swift in Sources */,
 				3E006E8C2A6982CF00A1C200 /* ReadingRainbowApp.swift in Sources */,
+				84A5F5882AA80C72005FA29F /* FakeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
