@@ -25,11 +25,15 @@ struct ParentViewReducer: Reducer {
 
 
 struct ParentView: View {
+    let store: StoreOf<ParentViewReducer>
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    ParentView()
+    ParentView(store: .init(initialState: .init(), reducer: {
+        ParentViewReducer()
+    }))
 }

@@ -19,7 +19,6 @@ struct ScrollingView: View {
                     VStack {
                         Text(imageName)
                        
-                        
                         NavigationLink(state: BookDetailReducer.State(bookName: "Ocean\(imageName)")) {
                             Image("Ocean\(imageName)").resizable().frame(width: 150, height: 150)
                         }

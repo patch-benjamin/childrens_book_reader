@@ -12,7 +12,7 @@ import LocalAuthentication
 struct MyBooksReducer: Reducer {
     
     struct State: Equatable {
-        @PresentationState var myBookDetail: BookDetailReducer.State?
+//        @PresentationState var myBookDetail: BookDetailReducer.State?
         @PresentationState var parentView: ParentViewReducer.State?
         var path = StackState<BookDetailReducer.State>()
     }
@@ -20,6 +20,7 @@ struct MyBooksReducer: Reducer {
     enum Action: Equatable {
         case bookDetail(PresentationAction<BookDetailReducer.Action>)
         case path(StackAction<BookDetailReducer.State, BookDetailReducer.Action>)
+        case parentModeTapped  (PresentationAction<ParentViewReducer.Action>)
     }
     
     var body: some ReducerOf<Self> {
@@ -30,8 +31,16 @@ struct MyBooksReducer: Reducer {
                 return .none
             case .path:
                 return .none
+            case .parentModeTapped:
+                print("parent mode")
+                return .none
             }
         }
+        
+        .ifLet(\.$parentView, action: /Action.parentModeTapped) {
+            ParentViewReducer()
+        }
+        
         .forEach(\.path, action: /Action.path) {
             BookDetailReducer()
         }
@@ -55,7 +64,12 @@ struct MyBooks: View {
                 .navigationTitle("My Book")
                 .toolbar {
                     ToolbarItem {
-                        NavigationLink("Parent Mode", destination: ParentView())
+                        Button {
+                            
+                        } label: {
+                            Text("Parent mode")
+                        }
+//                        NavigationLink("Parent Mode", destination: ParentView(store: ViewStore.))
 //                        Button {
 //                            print("Parent mode activated")
 //                        } label: {
@@ -82,12 +96,16 @@ struct MyBooks_Previews: PreviewProvider {
 extension MyBooksReducer {
     struct Destination {
         enum State: Equatable {
-            
+            case bookDetail(BookDetailReducer.State)
         }
         
         enum Action: Equatable {
-            
-        }  
+            case bookDetail(BookDetailReducer.Action)
+        }
+//        var body: some ReducerOf<Self> {
+//            Scope(state: /State.bookDetail, action: /Action.bookDetail) {
+//                BookDetailReducer()
+//            }
+        }
     }
-    
-}
+
