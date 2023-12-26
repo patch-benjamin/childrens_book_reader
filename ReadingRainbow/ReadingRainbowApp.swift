@@ -11,7 +11,9 @@ import SwiftUI
 struct ReadingRainbowApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MyBooks(store: .init(initialState: .init(), reducer: {
+                MyBooksReducer()
+            }))
         }
     }
 }

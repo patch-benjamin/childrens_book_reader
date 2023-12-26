@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3E006E8C2A6982CF00A1C200 /* ReadingRainbowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006E8B2A6982CF00A1C200 /* ReadingRainbowApp.swift */; };
-		3E006E8E2A6982CF00A1C200 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006E8D2A6982CF00A1C200 /* ContentView.swift */; };
+		3E006E8E2A6982CF00A1C200 /* MyBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006E8D2A6982CF00A1C200 /* MyBooks.swift */; };
 		3E006E902A6982D000A1C200 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E006E8F2A6982D000A1C200 /* Assets.xcassets */; };
 		3E006E932A6982D000A1C200 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E006E922A6982D000A1C200 /* Preview Assets.xcassets */; };
 		3E006E9D2A6982D100A1C200 /* ReadingRainbowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006E9C2A6982D100A1C200 /* ReadingRainbowTests.swift */; };
 		3E006EA72A6982D100A1C200 /* ReadingRainbowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006EA62A6982D100A1C200 /* ReadingRainbowUITests.swift */; };
 		3E006EA92A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E006EA82A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift */; };
-		716078702A8BC4F700E5E52E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7160786F2A8BC4F700E5E52E /* ComposableArchitecture */; };
+		3E5DE39B2B28B7CA00BD46DE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3E5DE39A2B28B7CA00BD46DE /* ComposableArchitecture */; };
+		3E80F5E92AF14F2F00D123DA /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80F5E82AF14F2F00D123DA /* ParentView.swift */; };
+		3EA972EA2ABC8DB600DDDEA8 /* ScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA972E92ABC8DB600DDDEA8 /* ScrollingView.swift */; };
+		3EE398A82A97E954007D1F41 /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE398A72A97E954007D1F41 /* BookDetail.swift */; };
+		3EFB0DF12B0D107E0019FFA6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB0DF02B0D107E0019FFA6 /* RootView.swift */; };
 		716078722A8BC58E00E5E52E /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716078712A8BC58E00E5E52E /* Book.swift */; };
 		716078752A8BC5A700E5E52E /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716078742A8BC5A700E5E52E /* Page.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +43,7 @@
 /* Begin PBXFileReference section */
 		3E006E882A6982CF00A1C200 /* ReadingRainbow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingRainbow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E006E8B2A6982CF00A1C200 /* ReadingRainbowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingRainbowApp.swift; sourceTree = "<group>"; };
-		3E006E8D2A6982CF00A1C200 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3E006E8D2A6982CF00A1C200 /* MyBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooks.swift; sourceTree = "<group>"; };
 		3E006E8F2A6982D000A1C200 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E006E922A6982D000A1C200 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E006E982A6982D100A1C200 /* ReadingRainbowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadingRainbowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +51,11 @@
 		3E006EA22A6982D100A1C200 /* ReadingRainbowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadingRainbowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E006EA62A6982D100A1C200 /* ReadingRainbowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingRainbowUITests.swift; sourceTree = "<group>"; };
 		3E006EA82A6982D100A1C200 /* ReadingRainbowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingRainbowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3E80F5E82AF14F2F00D123DA /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		3E87400C2AF0028100BE946D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3EA972E92ABC8DB600DDDEA8 /* ScrollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingView.swift; sourceTree = "<group>"; };
+		3EE398A72A97E954007D1F41 /* BookDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
+		3EFB0DF02B0D107E0019FFA6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		716078712A8BC58E00E5E52E /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		716078742A8BC5A700E5E52E /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716078702A8BC4F700E5E52E /* ComposableArchitecture in Frameworks */,
+				3E5DE39B2B28B7CA00BD46DE /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +109,13 @@
 		3E006E8A2A6982CF00A1C200 /* ReadingRainbow */ = {
 			isa = PBXGroup;
 			children = (
+				3E87400C2AF0028100BE946D /* Info.plist */,
 				3E006E8B2A6982CF00A1C200 /* ReadingRainbowApp.swift */,
-				3E006E8D2A6982CF00A1C200 /* ContentView.swift */,
+				3E006E8D2A6982CF00A1C200 /* MyBooks.swift */,
+				3EFB0DF02B0D107E0019FFA6 /* RootView.swift */,
+				3EE398A72A97E954007D1F41 /* BookDetail.swift */,
+				3E80F5E82AF14F2F00D123DA /* ParentView.swift */,
+				3EA972E92ABC8DB600DDDEA8 /* ScrollingView.swift */,
 				716078732A8BC59600E5E52E /* Models */,
 				3E006E8F2A6982D000A1C200 /* Assets.xcassets */,
 				3E006E912A6982D000A1C200 /* Preview Content */,
@@ -160,7 +174,7 @@
 			);
 			name = ReadingRainbow;
 			packageProductDependencies = (
-				7160786F2A8BC4F700E5E52E /* ComposableArchitecture */,
+				3E5DE39A2B28B7CA00BD46DE /* ComposableArchitecture */,
 			);
 			productName = ReadingRainbow;
 			productReference = 3E006E882A6982CF00A1C200 /* ReadingRainbow.app */;
@@ -235,7 +249,7 @@
 			);
 			mainGroup = 3E006E7F2A6982CF00A1C200;
 			packageReferences = (
-				7160786E2A8BC4F700E5E52E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				3E5DE3992B28B7CA00BD46DE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 3E006E892A6982CF00A1C200 /* Products */;
 			projectDirPath = "";
@@ -279,10 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E006E8E2A6982CF00A1C200 /* ContentView.swift in Sources */,
+				3EFB0DF12B0D107E0019FFA6 /* RootView.swift in Sources */,
+				3EA972EA2ABC8DB600DDDEA8 /* ScrollingView.swift in Sources */,
+				3E006E8E2A6982CF00A1C200 /* MyBooks.swift in Sources */,
 				716078722A8BC58E00E5E52E /* Book.swift in Sources */,
 				716078752A8BC5A700E5E52E /* Page.swift in Sources */,
+				3E80F5E92AF14F2F00D123DA /* ParentView.swift in Sources */,
 				3E006E8C2A6982CF00A1C200 /* ReadingRainbowApp.swift in Sources */,
+				3EE398A82A97E954007D1F41 /* BookDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +461,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ReadingRainbow/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReadingRainbow/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Would you like to use FaceID?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -471,6 +491,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ReadingRainbow/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReadingRainbow/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Would you like to use FaceID?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -603,20 +625,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7160786E2A8BC4F700E5E52E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		3E5DE3992B28B7CA00BD46DE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.5.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7160786F2A8BC4F700E5E52E /* ComposableArchitecture */ = {
+		3E5DE39A2B28B7CA00BD46DE /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7160786E2A8BC4F700E5E52E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 3E5DE3992B28B7CA00BD46DE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
