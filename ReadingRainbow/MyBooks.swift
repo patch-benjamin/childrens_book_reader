@@ -9,15 +9,24 @@ import SwiftUI
 import ComposableArchitecture
 import LocalAuthentication
 
+
+
 struct MyBooksReducer: Reducer {
     
+    
     struct State: Equatable {
-//        @PresentationState var myBookDetail: BookDetailReducer.State?
+
+        // TODO: create a navigation stack object: StackState<Path.State>
+        // This holds the current navigation destination/path as well as the state for that navigation path (and states for all states on the navigatin stack).
+        // TODO: var mainViewState: MyBooksReducer.State
         @PresentationState var parentView: ParentViewReducer.State?
         var path = StackState<BookDetailReducer.State>()
     }
     
     enum Action: Equatable {
+        // TODO: case path(StackAction<Path.State, Path.Action>)
+        // TODO: case mainViewState(MyBooksReducer.Action)
+
         case bookDetail(PresentationAction<BookDetailReducer.Action>)
         case path(StackAction<BookDetailReducer.State, BookDetailReducer.Action>)
         case parentModeTapped  (PresentationAction<ParentViewReducer.Action>)
@@ -44,6 +53,8 @@ struct MyBooksReducer: Reducer {
         .forEach(\.path, action: /Action.path) {
             BookDetailReducer()
         }
+
+
         
     }
 }
@@ -69,20 +80,15 @@ struct MyBooks: View {
                         } label: {
                             Text("Parent mode")
                         }
-//                        NavigationLink("Parent Mode", destination: ParentView(store: ViewStore.))
-//                        Button {
-//                            print("Parent mode activated")
-//                        } label: {
-//                            Text("Parent Mode")
-//                        }
-                        
+//                        
+//                        NavigationLink("Parent Mode", destination: ParentView(store: store))
                     }
                 }
             }
         } destination: { store in
             BookDetail(store: store)
         }
-        }
+    }
 }
 
 struct MyBooks_Previews: PreviewProvider {
